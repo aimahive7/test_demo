@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Practical Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: #2a5298;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .question {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .question h2 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        .example {
+            background-color: #f9f9f9;
+            border-left: 4px solid #2a5298;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        code {
+            background-color: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        
+        pre {
+            background-color: #e4c6c6;
+            color: #000000;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .marquee-container {
+            background-color: #f0f8ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .primary-btn {
+            background-color: #2a5298;
+            color: white;
+        }
+        
+        .primary-btn:hover {
+            background-color: #1e3c72;
+        }
+        
+        .secondary-btn {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .secondary-btn:hover {
+            background-color: #5a6268;
+        }
+        
+        .success-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .success-btn:hover {
+            background-color: #218838;
+        }
+        
+        .danger-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        .danger-btn:hover {
+            background-color: #c82333;
+        }
+        
+        .list-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .list-box {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background-color: #2a5298;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .ad-banner {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ad-banner h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: white;
+            color: #ff7e5f;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Practical Assignment</h1>
+        <p class="subtitle">Complete solutions for all HTML practical questions <br> by </p>
+        <h3>Mahi Ve</h3>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#q1">HTML Structure</a></li>
+            <li><a href="#q2">Marquee Tag</a></li>
+            <li><a href="#q3">Image Tag</a></li>
+            <li><a href="#q4">Paragraph & Heading</a></li>
+            <li><a href="#q5">Frame Tag</a></li>
+            <li><a href="#q6">Lists</a></li>
+            <li><a href="#q9">Form Tag</a></li>
+            <li><a href="#q10">HTML Intro</a></li>
+            <li><a href="#q11">Advantages</a></li>
+            <li><a href="#q12">Buttons</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Question 1 -->
+        <section id="q1" class="question">
+            <h2><br>Q.1) Create web page for describing the structure of HTML.</h2>
+            <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. The basic structure of an HTML document includes:</p>
+            
+            <div class="example">
+                <h3>Basic HTML Structure:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            
+            <p>Key components:</p>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code> - Declares the document type and HTML version</li>
+                <li><code>&lt;html&gt;</code> - The root element of an HTML page</li>
+                <li><code>&lt;head&gt;</code> - Contains meta information about the document</li>
+                <li><code>&lt;title&gt;</code> - Specifies a title for the document</li>
+                <li><code>&lt;body&gt;</code> - Contains the visible page content</li>
+            </ul>
+        </section>
+        
+        <!-- Question 2 -->
+        <section id="q2" class="question">
+            <h2><br>Q.2) Create web page for Marquee tag with all attributes.</h2>
+            <p>The <code>&lt;marquee&gt;</code> tag is used to create a scrolling text or image. Although it's deprecated in HTML5, it's still supported by most browsers.</p>
+            
+            <div class="marquee-container">
+                <h3>Marquee Examples:</h3>
+                <marquee behavior="scroll" direction="left" scrollamount="5">This is a default scrolling text (left direction)</marquee>
+                <marquee behavior="scroll" direction="right" scrollamount="10" style="color: red; margin: 10px 0;">This text scrolls to the right with increased speed</marquee>
+                <marquee behavior="alternate" direction="left" scrollamount="3" style="background-color: #f0f0f0; padding: 5px;">This text alternates direction (bounces)</marquee>
+                <marquee behavior="scroll" direction="up" height="100" scrollamount="2" style="background-color: #e0e0e0; padding: 10px;">This text scrolls upward<br>Line 2 of upward scrolling text</marquee>
+                <marquee behavior="slide" direction="left" scrollamount="8" style="color: blue;">This text slides in and stops</marquee>
+            </div>
+            
+            <div class="example">
+                <h3>Marquee Attributes:</h3>
+                <ul>
+                    <li><code>behavior</code> - Specifies how the text should scroll (scroll, slide, alternate)</li>
+                    <li><code>direction</code> - Specifies the direction of scrolling (left, right, up, down)</li>
+                    <li><code>scrollamount</code> - Specifies the speed of scrolling</li>
+                    <li><code>scrolldelay</code> - Specifies delay between each jump</li>
+                    <li><code>loop</code> - Specifies how many times to loop</li>
+                    <li><code>width</code> and <code>height</code> - Specifies dimensions</li>
+                    <li><code>bgcolor</code> - Specifies background color</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Question 3 -->
+        <section id="q3" class="question">
+            <h2><br>Q.3) Create web page for Image tag with all attributes.</h2>
+            <p>The <code>&lt;img&gt;</code> tag is used to embed images in an HTML page. It's an empty tag (no closing tag) that contains attributes only.</p>
+            
+            <div class="image-gallery">
+                <div>
+                    <h4>Basic Image:</h4>
+                    <img src="data:image/jpeg;base64,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" alt="Placeholder Image" width="300" height="200">
+                </div>
+                <div>
+                    <h4>Image with Border:</h4>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKi9C144sdUFynn4xXZCSj7ljcsTvnfdUxsUHjAQWfN-2VAhyLAkRGZFqKA&s" alt="Placeholder Image" width="300" height="200" border="2">
+                </div>
+                <div>
+                    <h4>Aligned Image:</h4>
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyabgymzw1lvjEsplp3Zhj2X_XLhTF4GOoTZVohpCBQi41OO4LwFgz1Kj3XgEqffEFmq0ghSzFPfmbbmpLi0WGzWhwKmUcEY7jCZdq23JhH7hq5RfjqjUqrZk6YrvB5Qo2DSgM=w675-h390-n-k-no" alt="Placeholder Image" width="300" height="200" align="right">
+                </div>
+            </div>
+            
+            <div class="example">
+                <h3>Image Tag Attributes:</h3>
+                <ul>
+                    <li><code>src</code> - Specifies the path to the image (required)</li>
+                    <li><code>alt</code> - Specifies alternate text for the image (required for accessibility)</li>
+                    <li><code>width</code> and <code>height</code> - Specify dimensions of the image</li>
+                    <li><code>title</code> - Provides additional information about the image</li>
+                    <li><code>border</code> - Specifies the width of the border around the image</li>
+                    <li><code>align</code> - Specifies the alignment of the image (left, right, top, middle, bottom)</li>
+                    <li><code>hspace</code> and <code>vspace</code> - Specify horizontal and vertical space around the image</li>
+                </ul>
+                
+                <h4>Example Code:</h4>
+                <pre><code>&lt;img src="image.jpg" alt="Description of image" width="500" height="300" title="Image Title" border="1"&gt;</code></pre>
+            </div>
+        </section>
+        
+        <!-- Question 4 -->
+        <section id="q4" class="question">
+            <h2><br>Q.4) Create web page for Paragraph, heading tag with use anchor tag.</h2>
+            <p>HTML provides various heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) for different levels of headings, and the <code>&lt;p&gt;</code> tag for paragraphs. The <code>&lt;a&gt;</code> tag (anchor) is used to create hyperlinks.</p>
+            
+            <div class="example">
+                <h1>This is a Heading 1</h1>
+                <p>This is a paragraph with an <a href="#q1">internal link to Question 1</a>. You can also create <a href="https://www.example.com" target="_blank">external links</a> that open in a new tab.</p>
+                
+                <h2>This is a Heading 2</h2>
+                <p>Another paragraph with more text. The anchor tag can link to different resources like <a href="mailto:example@email.com">email addresses</a> or <a href="tel:+1234567890">phone numbers</a>.</p>
+                
+                <h3>This is a Heading 3</h3>
+                <p>Paragraphs can contain various elements. For example, you can create a <a href="#top">link back to top</a> or link to specific sections within the page.</p>
+                
+                <h4>This is a Heading 4</h4>
+                <p>You can style links differently based on their state: <a href="#" class="styled-link">unvisited</a>, <a href="#" style="color: purple;">visited</a>, or <a href="#" style="background-color: yellow;">hovered</a>.</p>
+                
+                <h5>This is a Heading 5</h5>
+                <p>Anchor tags can also be used to create <a href="documents/sample.pdf" download>download links</a> for files.</p>
+                
+                <h6>This is a Heading 6</h6>
+                <p>The smallest heading level is often used for fine print or less important headings.</p>
+            </div>
+        </section>
+        
+        <!-- Question 5 -->
+        <section id="q5" class="question">
+            <h2><br>Q.5) Describe a Frame Tag with all attributes.</h2>
+            <p>The <code>&lt;frameset&gt;</code> and <code>&lt;frame&gt;</code> tags were used to create multiple, independent sections in a browser window. However, they are deprecated in HTML5 and should be avoided in modern web development.</p>
+            
+            <div class="example">
+                <h3>Frame Tag Attributes:</h3>
+                <ul>
+                    <li><code>src</code> - Specifies the source file for the frame</li>
+                    <li><code>name</code> - Specifies a name for the frame</li>
+                    <li><code>frameborder</code> - Specifies whether to display a border (0 or 1)</li>
+                    <li><code>marginwidth</code> - Specifies the left and right margins</li>
+                    <li><code>marginheight</code> - Specifies the top and bottom margins</li>
+                    <li><code>noresize</code> - Prevents resizing of the frame</li>
+                    <li><code>scrolling</code> - Specifies whether to display scrollbars (yes, no, auto)</li>
+                </ul>
+                
+                <h3>Frameset Tag Attributes:</h3>
+                <ul>
+                    <li><code>cols</code> - Specifies the number and size of columns</li>
+                    <li><code>rows</code> - Specifies the number and size of rows</li>
+                    <li><code>frameborder</code> - Specifies whether to display borders</li>
+                    <li><code>border</code> - Specifies the width of the borders</li>
+                </ul>
+                
+                <h4>Example Code (for reference only):</h4>
+                <pre><code>&lt;frameset cols="25%,75%"&gt;
+    &lt;frame src="menu.html" name="menu"&gt;
+    &lt;frame src="content.html" name="content"&gt;
+&lt;/frameset&gt;</code></pre>
+                
+                <p><strong>Note:</strong> Modern alternatives to frames include using CSS (Flexbox, Grid) or the <code>&lt;iframe&gt;</code> tag for embedding content.</p>
+            </div>
+        </section>
+        
+        <!-- Question 6 -->
+        <section id="q6" class="question">
+            <h2><br>Q.6) Create web page using Order and Unorder list Tag.</h2>
+            <p>HTML provides two main types of lists: ordered lists (<code>&lt;ol&gt;</code>) and unordered lists (<code>&lt;ul&gt;</code>). List items are defined with the <code>&lt;li&gt;</code> tag.</p>
+            
+            <div class="list-container">
+                <div class="list-box">
+                    <h3>Unordered List (Default)</h3>
+                    <ul>
+                        <li>First item</li>
+                        <li>Second item</li>
+                        <li>Third item</li>
+                        <li>Fourth item</li>
+                    </ul>
+                    
+                    <h3>Unordered List (Square)</h3>
+                    <ul style="list-style-type: square;">
+                        <li>Square bullet item 1</li>
+                        <li>Square bullet item 2</li>
+                        <li>Square bullet item 3</li>
+                    </ul>
+                    
+                    <h3>Unordered List (Circle)</h3>
+                    <ul style="list-style-type: circle;">
+                        <li>Circle bullet item 1</li>
+                        <li>Circle bullet item 2</li>
+                        <li>Circle bullet item 3</li>
+                    </ul>
+                </div>
+                
+                <div class="list-box">
+                    <h3>Ordered List (Default)</h3>
+                    <ol>
+                        <li>First item</li>
+                        <li>Second item</li>
+                        <li>Third item</li>
+                        <li>Fourth item</li>
+                    </ol>
+                    
+                    <h3>Ordered List (Uppercase Letters)</h3>
+                    <ol type="A">
+                        <li>Item A</li>
+                        <li>Item B</li>
+                        <li>Item C</li>
+                    </ol>
+                    
+                    <h3>Ordered List (Roman Numerals)</h3>
+                    <ol type="I">
+                        <li>First item</li>
+                        <li>Second item</li>
+                        <li>Third item</li>
+                    </ol>
+                </div>
+                
+                <div class="list-box">
+                    <h3>Nested Lists</h3>
+                    <ul>
+                        <li>Fruits
+                            <ul>
+                                <li>Apples</li>
+                                <li>Oranges</li>
+                                <li>Bananas</li>
+                            </ul>
+                        </li>
+                        <li>Vegetables
+                            <ol>
+                                <li>Carrots</li>
+                                <li>Broccoli</li>
+                                <li>Spinach</li>
+                            </ol>
+                        </li>
+                        <li>Grains
+                            <ul>
+                                <li>Rice</li>
+                                <li>Wheat</li>
+                                <li>Oats</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Questions 7 & 8 (Combined) -->
+        <section id="q7" class="question">
+            <h2><br>Q.7 & Q.8) Create web page with Frame tag with all attributes.</h2>
+            <p>As mentioned earlier, frames are deprecated in HTML5. However, for educational purposes, here's an example of how frames were used:</p>
+            
+            <div class="example">
+                <h3>Frameset Example (Conceptual):</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Frames Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;frameset rows="20%,60%,20%" frameborder="1" border="5"&gt;
+    &lt;frame src="header.html" name="header" noresize scrolling="no"&gt;
+    &lt;frameset cols="30%,70%"&gt;
+        &lt;frame src="navigation.html" name="nav"&gt;
+        &lt;frame src="content.html" name="content"&gt;
+    &lt;/frameset&gt;
+    &lt;frame src="footer.html" name="footer" noresize scrolling="no"&gt;
+&lt;/frameset&gt;
+&lt;/html&gt;</code></pre>
+                
+                <p><strong>Modern Alternative:</strong> Instead of frames, modern websites use CSS layout techniques (Flexbox, Grid) or the <code>&lt;iframe&gt;</code> tag for embedding external content.</p>
+                
+                <h3>Iframe Example (Modern Approach):</h3>
+                <iframe src="https://example.com" width="100%" height="300" style="border: 1px solid #ccc;" title="Example Website"></iframe>
+            </div>
+        </section>
+        
+        <!-- Question 9 -->
+        <section id="q9" class="question">
+            <h2><br>Q.9) Create web page With Form Tag</h2>
+            <p>The <code>&lt;form&gt;</code> tag is used to create an HTML form for user input. Forms can contain various input elements like text fields, checkboxes, radio buttons, submit buttons, etc.</p>
+            
+            <div class="example">
+                <form action="#" method="post" style="background-color: #f9f9f9; padding: 2rem; border-radius: 5px;">
+                    <h3>Registration Form</h3>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name">Full Name:</label><br>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email">Email Address:</label><br>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label>Gender:</label><br>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label>Interests:</label><br>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="sports">Sports</label>
+                        <input type="checkbox" id="music" name="interests" value="music">
+                        <label for="music">Music</label>
+                        <input type="checkbox" id="reading" name="interests" value="reading">
+                        <label for="reading">Reading</label>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="country">Country:</label><br>
+                        <select id="country" name="country" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+                            <option value="">Select a country</option>
+                            <option value="usa">United States</option>
+                            <option value="canada">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="australia">Australia</option>
+                            <option value="india">India</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="4" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;"></textarea>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <input type="file" id="file" name="file">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">I agree to the terms and conditions</label>
+                    </div>
+                    
+                    <button type="submit" class="primary-btn">Submit</button>
+                    <button type="reset" class="secondary-btn">Reset</button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Question 10 -->
+        <section id="q10" class="question">
+            <h2><br>Q.10) Explain Introduction of HTML.</h2>
+            <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. It was created by Tim Berners-Lee in 1991.</p>
+            
+            <div class="example">
+                <h3>Key Points About HTML:</h3>
+                <ul>
+                    <li><strong>HyperText:</strong> Refers to text that contains links to other texts, which readers can immediately access.</li>
+                    <li><strong>Markup Language:</strong> A computer language that uses tags to define elements within a document.</li>
+                    <li><strong>Platform Independent:</strong> HTML can be viewed on any operating system (Windows, Mac, Linux, etc.).</li>
+                    <li><strong>Web Browsers:</strong> HTML documents are interpreted and displayed by web browsers like Chrome, Firefox, Safari, etc.</li>
+                    <li><strong>Elements and Tags:</strong> HTML uses predefined tags and attributes that define how content is displayed.</li>
+                    <li><strong>HTML Versions:</strong> HTML has evolved through several versions (HTML, HTML 2.0, HTML 3.2, HTML 4.01, XHTML, HTML5).</li>
+                </ul>
+                
+                <h3>How HTML Works:</h3>
+                <ol>
+                    <li>Web developers write HTML code in text editors or IDEs</li>
+                    <li>The code is saved with .html or .htm extension</li>
+                    <li>Web browsers read HTML files and render them as visual web pages</li>
+                    <li>Browsers don't display HTML tags but use them to interpret page content</li>
+                </ol>
+                
+                <h3>Basic HTML Document Structure:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+    &lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+        
+        <!-- Question 11 -->
+        <section id="q11" class="question">
+            <h2><br>Q.11) Explain Advantages And Disadvantages of HTML.</h2>
+            
+            <div class="list-container">
+                <div class="list-box">
+                    <h3>Advantages of HTML</h3>
+                    <ul>
+                        <li><strong>Easy to Learn:</strong> HTML has a simple syntax that is easy to understand and implement.</li>
+                        <li><strong>Platform Independent:</strong> HTML works on all operating systems and browsers.</li>
+                        <li><strong>Free to Use:</strong> HTML is open-source and doesn't require any special software.</li>
+                        <li><strong>Integration:</strong> Easily integrates with other languages like CSS, JavaScript, PHP, etc.</li>
+                        <li><strong>Search Engine Friendly:</strong> HTML is the most search engine friendly language compared to other web development languages.</li>
+                        <li><strong>Basic of All Programming Languages:</strong> Understanding HTML is essential for learning other web technologies.</li>
+                        <li><strong>Display Changes Immediately:</strong> Changes in HTML code are immediately visible in the browser.</li>
+                    </ul>
+                </div>
+                
+                <div class="list-box">
+                    <h3>Disadvantages of HTML</h3>
+                    <ul>
+                        <li><strong>Static Language:</strong> HTML alone can only create static web pages.</li>
+                        <li><strong>Limited Functionality:</strong> Complex functionality requires other languages like JavaScript.</li>
+                        <li><strong>Browser Compatibility:</strong> Some tags may be interpreted differently by different browsers.</li>
+                        <li><strong>Not a Programming Language:</strong> HTML is a markup language, not a programming language.</li>
+                        <li><strong>Security Features:</strong> HTML lacks built-in security features to protect the source code.</li>
+                        <li><strong>Complex Code:</strong> Creating complex layouts can result in lengthy and complex code.</li>
+                        <li><strong>Limited Styling:</strong> Basic styling is possible, but advanced styling requires CSS.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Question 12 -->
+        <section id="q12" class="question">
+            <h2><br>Q.12) Create web page with Buttons.</h2>
+            <p>Buttons in HTML can be created using the <code>&lt;button&gt;</code> tag or the <code>&lt;input&gt;</code> tag with type="button". Buttons are used to trigger actions when clicked.</p>
+            
+            <div class="example">
+                <h3>Button Examples:</h3>
+                
+                <div class="button-container">
+                    <button class="primary-btn">Primary Button</button>
+                    <button class="secondary-btn">Secondary Button</button>
+                    <button class="success-btn">Success Button</button>
+                    <button class="danger-btn">Danger Button</button>
+                </div>
+                
+                <div class="button-container">
+                    <button disabled>Disabled Button</button>
+                    <button style="background-color: #6f42c1; color: white;">Custom Color Button</button>
+                    <button style="border: 2px solid #2a5298; background-color: transparent; color: #2a5298;">Outlined Button</button>
+                </div>
+                
+                <div class="button-container">
+                    <button onclick="alert('Button clicked!')">Button with OnClick</button>
+                    <button type="submit">Submit Button</button>
+                    <button type="reset">Reset Button</button>
+                    <input type="button" value="Input Button">
+                </div>
+                
+                <h3>Button with Different Sizes:</h3>
+                <div class="button-container">
+                    <button style="padding: 0.5rem 1rem; font-size: 0.875rem;">Small Button</button>
+                    <button style="padding: 0.75rem 1.5rem; font-size: 1rem;">Medium Button</button>
+                    <button style="padding: 1rem 2rem; font-size: 1.125rem;">Large Button</button>
+                </div>
+                
+                <h3>Button with Icons:</h3>
+                <div class="button-container">
+                    <button style="background-color: #28a745; color: white;">✓ Save</button>
+                    <button style="background-color: #dc3545; color: white;">✗ Delete</button>
+                    <button style="background-color: #17a2b8; color: white;">📧 Email</button>
+                    <button style="background-color: #ffc107; color: black;">⭐ Favorite</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ad Banner -->
+        <div class="ad-banner">
+            <h3>Swift. Seamless. Secure</h3>
+            <p> Nanded </p>
+            <a href="#" class="download-btn">Download Now</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>HTML Practical Assignment &copy; 2025-56</p>
+        <p>Created for College Assignment Nov 2025</p>
+    </footer>
+
+    <script>
+        // Simple script to demonstrate button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to all buttons for demonstration
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                if (!button.hasAttribute('onclick') && button.type !== 'submit' && button.type !== 'reset') {
+                    button.addEventListener('click', function() {
+                        alert('Button clicked: ' + this.textContent);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
